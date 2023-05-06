@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges
 import {FilesService, MyFile} from "../../files.service";
 import { saveAs } from 'file-saver';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Auth } from 'aws-amplify';
 
 @Component({
   selector: 'app-files-list',
@@ -15,23 +16,25 @@ export class FileListComponent implements OnInit, OnChanges {
   @Input() isUploaded: boolean = false;
   displayedColumns: string[] = ['name', 'size', 'actions'];
   isLoading:boolean = false;
+  hasDeletePermission:boolean = false;
 
   constructor(private fileService: FilesService, private snackBar: MatSnackBar) {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(this.isUploaded == true) {
-      console.log("Upload");
-      this.isLoading = true;
-      const timer = setTimeout(() => this.getFiles(), 2000);
-      clearTimeout(timer);
-      this.isLoading = false;
-      this.isUploaded = false;
-    }
+    
   }
 
   ngOnInit(): void {
+    this.checkUserPermissions();
     this.getFiles();
+  }
+
+  checkUserPermissions(): void {
+    Auth.currentAuthenticatedUser().then(user => {
+      const userGroups = user.signInUserSession.accessToken.payload['cognito:groups'];
+      this.hasDeletePermission = userGroups.includes('full-permission');
+    });
   }
 
   getFiles(): void {
