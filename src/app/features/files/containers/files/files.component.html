@@ -1,0 +1,4 @@
+<div class="container">
+  <app-file-upload (fileUploaded)="onFileUploaded()"></app-file-upload>
+  <app-files-list [isUploaded]="isUploaded" (uploadedFiles)="files=$event"></app-files-list>
+</div>
