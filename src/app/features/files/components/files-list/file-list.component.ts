@@ -70,6 +70,7 @@ export class FileListComponent implements OnInit, OnChanges {
       {
         next: () => {
           this.snackBar.open('File deleted successfully', 'Close', { duration: 2000 });
+          setTimeout(function() {}, 2000);
           this.getFiles();
         },
         error: error => {
