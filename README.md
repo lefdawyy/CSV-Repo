@@ -5,5 +5,5 @@ Web app link: https://main.dqexq777ufnpo.amplifyapp.com/files
 
 ### Users:-
 full permission : username: admin , pass: Admin200<br>
-read write permission : username: add_read_user , pass: AddReadUser200<br>
+read write permission : username: read_write_user , pass: ReadWriteUser200<br>
 read permission : username: read_user , pass: ReadUser200<br>
