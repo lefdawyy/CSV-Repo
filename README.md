@@ -11,6 +11,9 @@ full permission : username: admin , pass: Admin200<br>
 read write permission : username: read_write_user , pass: ReadWriteUser200<br>
 read permission : username: read_user , pass: ReadUser200<br>
 
+### Services region:-
+* Functions, sns and APIGateway Services was in `US East (N. Virginia) us-east-1`.
+* Amplify and cognito services was in `Europe (Milan) eu-south-1`, because in (N. Virginia) was reached the maximum number of hosted apps.
 ## App Services
 ### Upload csv:- 
 1. First I created the needed lambda functions:-
