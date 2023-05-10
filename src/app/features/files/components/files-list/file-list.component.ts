@@ -70,7 +70,7 @@ export class FileListComponent implements OnInit, OnChanges {
       {
         next: () => {
           this.snackBar.open('File deleted successfully', 'Close', { duration: 2000 });
-          setTimeout(function() {}, 2000);
+          setTimeout(function() {}, 3000);
           this.getFiles();
         },
         error: error => {
@@ -87,7 +87,7 @@ export class FileListComponent implements OnInit, OnChanges {
     this.fileService.convertToJson(file.name).subscribe({
       next: response => {
         const blob = new Blob([JSON.stringify(response)], { type: 'text/plain;charset=utf-8' });
-        saveAs(blob, file.name + '.txt');
+        saveAs(blob, file.name + '.json');
         this.snackBar.open('Json file downloaded successfully', 'Close', { duration: 2000 });
         this.getFiles();
       },
