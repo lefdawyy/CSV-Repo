@@ -1,5 +1,9 @@
 # CSV-Repo 
+## Architectures
 ![image](https://user-images.githubusercontent.com/92638982/236921439-e35b1258-38b6-46dd-affa-b98a5fb5a475.png)
+![image](https://github.com/lefdawyy/CSV-Repo/assets/92638982/e80db106-78cf-4b75-89d3-e6aa565122ca)
+
+Or you can show them from here: https://drive.google.com/file/d/1XMrwFsUaVaxefuKu0RBgK2FFDZ4j_7ic/view?usp=sharing
 
 ## My App
 Web app link: https://main.dqexq777ufnpo.amplifyapp.com/files
